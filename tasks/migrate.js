@@ -1,8 +1,7 @@
 'use strict';
-require('../utils/rootRequire')();
+require('../utils/autoload')();
+let User = autoload('app/models/User');
 
-let Todo = autoload('app/models/Todo');
-
-Todo.sync().then(() => {
-  console.log('Table "Todo" created');
+User.sync().then(() => {
+  console.log('Table "User" created');
 });

@@ -9,6 +9,6 @@ let express = require('express');
 let Controller = autoload('./app/controllers/JWTController');
 let router = express.Router();
 
-router.post('/', Controller.createToken); // POST /todos
+router.post('/', Controller.createToken); // POST /jwt
 
 module.exports = router;

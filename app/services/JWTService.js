@@ -7,10 +7,10 @@ const secret = config.secret;
 
 let service = {
 
-  createToken: function(){
+  createToken: function(user){
 
-    var token = jwt.sign({'text': 'A encryption text, hidden in the token.'}, secret, {
-      expiresInMinutes: 1440
+    var token = jwt.sign(user, secret, {
+      expiresIn: 1440 * 60
     });
 
     return token;

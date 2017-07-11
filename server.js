@@ -56,13 +56,15 @@ if (cluster.isMaster) {
     console.log(err.name);
     if (err.name === 'UnauthorizedError') {
 
-      res.status(401).json({
+      return res.status(401).json({
         error: 'Please send a valid Token...'
       });
     }
+    next();
   });
 
   app.use(function(err, req, res, next) {
+    console.log(errr)
     res.status(err.status || 500);
 
     res.json({
