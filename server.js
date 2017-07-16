@@ -1,6 +1,5 @@
 'use strict';
 
-require('./utils/autoload')();
 let config = require('./config.json');
 
 var cluster = require('cluster');
@@ -30,7 +29,7 @@ if (cluster.isMaster) {
 } else {
   let PORT = process.env.PORT || config.port || 3000;
 
-  let Router = autoload('app/Router');
+  let Router = require('./app/Router');
   let app = express();
 
   let server = http.createServer(app);
@@ -40,7 +39,7 @@ if (cluster.isMaster) {
 
   /* ROUTES */
   Router.forEach(route => {
-    app.use(route.path, route.middleware, route.handler);
+    app.use('/api' + route.path, route.middleware, route.handler);
   });
 
   /* ERRORS */

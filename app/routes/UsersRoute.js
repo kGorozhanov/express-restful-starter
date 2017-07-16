@@ -7,11 +7,10 @@
 
 let express = require('express');
 let jwt = require('express-jwt');
-let Controller = autoload('./app/controllers/UsersController');
+let Controller = require('../controllers/UsersController');
+let config = require('../../config.json');
 
 let router = express.Router();
-
-let config = require('../../config.json');
 
 const secret = config.secret;
 

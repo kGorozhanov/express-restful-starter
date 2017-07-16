@@ -1,7 +1,7 @@
 'use strict';
 
-let JWTServices = autoload('./app/services/JWTService');
-let UsersService = autoload('./app/services/UsersService');
+let JWTServices = require('../services/JWTService');
+let UsersService = require('../services/UsersService');
 let Promises = require("bluebird");
 
 let controller = {
@@ -25,6 +25,7 @@ let controller = {
 
     query.catch(err => {
       console.log(err);
+      res.status(500).end();
     })
   }
 };

@@ -1,7 +1,7 @@
 'use strict';
 
-let UsersService = autoload('./app/services/UsersService');
-let Promises = require("bluebird");
+let UsersService = require('../services/UsersService');
+// let Promises = require("bluebird");
 
 let controller = {
 
