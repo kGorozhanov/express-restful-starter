@@ -9,6 +9,9 @@ let service = {
                 userId
             }
         });
+    },
+    findById(id) {
+        return Restourant.findById(id);
     }
 };
 module.exports = service;

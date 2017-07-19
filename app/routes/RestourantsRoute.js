@@ -17,5 +17,6 @@ const secret = config.secret;
 
 router.post('/', [jwt({secret: secret})], rolesMiddlewares.hasRole('manager'), Controller.create); // POST /restourants
 router.get('/', [jwt({secret: secret})], rolesMiddlewares.hasRole('manager'), Controller.myRestourants); // GET /restourants
+router.get('/:id', [jwt({secret: secret})], rolesMiddlewares.hasRole('manager'), Controller.findById); // GET /restourant by id
 
 module.exports = router;
