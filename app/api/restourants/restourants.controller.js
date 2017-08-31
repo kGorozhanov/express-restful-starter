@@ -1,6 +1,6 @@
 'use strict';
 
-let RestourantsService = require('../services/RestourantsService');
+let RestourantsService = require('./restourants.service');
 let controller = {
     create(req, res){
         let params = {

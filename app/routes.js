@@ -4,16 +4,16 @@ module.exports = [
   {
     path: '/users',
     middleware: [],
-    handler: require('./routes/UsersRoute')
+    handler: require('./api/users/users.route')
   },
   {
     path: '/restourants',
     middleware: [],
-    handler: require('./routes/RestourantsRoute')
+    handler: require('./api/restourants/restourants.route')
   },
   {
     path: '/jwt',
     middleware: [],
-    handler: require('./routes/JWTRoute')
+    handler: require('./api/jwt/jwt.route')
   }
 ];

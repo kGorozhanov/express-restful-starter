@@ -7,8 +7,8 @@
 
 let express = require('express');
 let jwt = require('express-jwt');
-let Controller = require('../controllers/UsersController');
-let config = require('../../config.json');
+let Controller = require('./users.controller');
+let config = require('../../../config.json');
 
 let router = express.Router();
 

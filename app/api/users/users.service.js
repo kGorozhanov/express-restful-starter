@@ -1,6 +1,6 @@
 'use strict';
 
-let User = require('../models/User');
+let User = require('./users.model');
 
 let service = {
   create: function(params) {

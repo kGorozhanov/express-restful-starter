@@ -1,7 +1,7 @@
 'use strict';
 
-let JWTServices = require('../services/JWTService');
-let UsersService = require('../services/UsersService');
+let JWTServices = require('./jwt.service');
+let UsersService = require('../users/users.service');
 let Promises = require("bluebird");
 
 let controller = {

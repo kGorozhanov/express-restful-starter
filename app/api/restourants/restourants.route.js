@@ -7,9 +7,9 @@
 
 let express = require('express');
 let jwt = require('express-jwt');
-let Controller = require('../controllers/RestourantsController');
-let config = require('../../config.json');
-let rolesMiddlewares = require('./../middlewares/RolesMiddleware');
+let Controller = require('./restourants.controller');
+let config = require('../../../config.json');
+let rolesMiddlewares = require('../../middlewares/roles.middleware');
 
 let router = express.Router();
 

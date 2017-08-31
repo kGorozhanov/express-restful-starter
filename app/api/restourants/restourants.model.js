@@ -1,7 +1,7 @@
 'use strict';
 
 let db = require('../../config/db');
-let User = require('./User');
+let User = require('../users/users.model');
 let Restourant = db.define('restourant', {
     id: {
         type: db.Sequelize.INTEGER,

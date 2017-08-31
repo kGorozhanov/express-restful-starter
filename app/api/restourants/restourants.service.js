@@ -1,4 +1,4 @@
-let Restourant = require('./../models/Restourant');
+let Restourant = require('./restourants.model');
 let service = {
     create(params){
         return Restourant.create(params)

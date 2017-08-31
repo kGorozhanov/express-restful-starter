@@ -29,16 +29,16 @@ if (cluster.isMaster) {
 } else {
   let PORT = process.env.PORT || config.port || 3000;
 
-  let Router = require('./app/Router');
+  let appRoutes = require('./app/routes');
   let app = express();
 
   let server = http.createServer(app);
 
   /* MIDDLEWARE */
-  require('./config/middleware')(app, express);
+  require('./app/config/middleware')(app, express);
 
   /* ROUTES */
-  Router.forEach(route => {
+  appRoutes.forEach(route => {
     app.use('/api' + route.path, route.middleware, route.handler);
   });
 
@@ -52,9 +52,7 @@ if (cluster.isMaster) {
   });
 
   app.use(function (err, req, res, next) {
-    console.log(err.name);
     if (err.name === 'UnauthorizedError') {
-
       return res.status(401).json({
         error: 'Please send a valid Token...'
       });
@@ -63,7 +61,6 @@ if (cluster.isMaster) {
   });
 
   app.use(function(err, req, res, next) {
-    console.log(errr)
     res.status(err.status || 500);
 
     res.json({

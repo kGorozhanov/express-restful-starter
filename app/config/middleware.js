@@ -6,7 +6,7 @@ let path = require('path');
 let compression = require('compression');
 let errorHandler = require('errorhandler');
 let morgan = require('morgan');
-let config = require('../config.json');
+let config = require('../../config.json');
 
 module.exports = function(app, express) {
 

@@ -1,7 +1,7 @@
 'use strict';
 
 let jwt = require('jsonwebtoken');
-let config = require('../../config.json');
+let config = require('../../../config.json');
 
 const secret = config.secret;
 
